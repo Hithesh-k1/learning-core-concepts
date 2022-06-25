@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var running = false;
+      var largeArray = [];
+      function GrowHandler() {
+        running = true;
+        GrowInSize();
+      }
+      function GrowInSize() {
+        largeArray.push(new Array(10000).fill("*"));
+        if (running) {
+          setTimeout(() => GrowInSize(), 2000);
+        }
+      }
+      function Stop() {
+        running = false;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="GrowHandler()">Grow !</button
+    ><button onclick="Stop()">Stop !</button>
+  </body>
+</html>

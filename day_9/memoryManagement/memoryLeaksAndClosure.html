@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Outer() {
+        var x = [10, 20, 30, 40];
+        return function () {
+          console.log(x[0]);
+          x = null;
+        };
+      }
+      //   let Inner = Outer();
+      //   Inner();
+
+      Outer()(); // function currying
+
+      var globalVar = null;
+      var globalFunction = function () {
+        var localVar = globalVar;
+
+        var neverUsedFunction = function () {
+          if (localVar) {
+            console.log(`Local Variable defined !`);
+          }
+        };
+
+        globalVar = {
+          largeArray: new Array(5000).join("*"),
+          someMethod: function () {
+            console.log("SomeMethod !");
+          },
+        };
+        localVar = null;
+      };
+      setInterval(globalFunction, 2000);
+    </script>
+  </head>
+  <body></body>
+</html>

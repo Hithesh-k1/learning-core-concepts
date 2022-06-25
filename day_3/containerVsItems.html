@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* works on main X axis*/
+        /* align-items: center; */ /*works on cross-axis Y axis*/
+      }
+
+      .box {
+        height: 100px;
+        flex-basis: 200px;
+        /* flex: 1 0 200px; */
+      }
+      .flex-item-one {
+        background-color: lightgreen;
+        /* flex-grow: 1; */
+        /* flex-shrink: 1; */
+      }
+      .flex-item-two {
+        background-color: rgb(102, 209, 191);
+        /* flex-grow: 2; */
+        /* flex-shrink: 3; */
+      }
+      .flex-item-three {
+        background-color: rgb(36, 71, 226);
+        /* flex-grow: 3; */
+        /* flex-shrink: 2; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="box flex-item-one">Box - 1</div>
+      <div class="box flex-item-two">Box - 2</div>
+      <div class="box flex-item-three">Box - 3</div>
+    </div>
+  </body>
+</html>

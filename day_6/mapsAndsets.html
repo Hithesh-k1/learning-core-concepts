@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      //   var obj = { city: "Pune", state: "Maharashtra" };
+      // Dictionary - key - value
+      //   let map = new Map();
+      //   map.set("Pune", "Maharashtra");
+      //   map.set("Mumbai", "Maharashtra");
+      //   map.set("Noida", "Uttar Pradesh");
+      //   map.set("Dandeli", "Karnataka");
+      //   map.set("Pune", "MH");
+      //   //   console.log(map.get("Pune"));
+      //   for (let entry of map) {
+      //     console.log(entry[0] + " is in " + entry[1]);
+      //   }
+      //   let cityIterator = map.entries();
+      //   console.log(cityIterator.next().value);
+      //   console.log(cityIterator.next().value);
+
+      // Set -> Unique values
+      var set = new Set();
+      set.add("Pune").add("Mumbai").add("Bengaluru").add("Chennai").add("Pune");
+      //   console.log(set.has("Mumbai"));
+
+      for (let entry of set) {
+        console.log(entry);
+      }
+      var playerOne = { name: "Neeraj Chopra" };
+      var playerTwo = { name: "Usain Bolt" };
+      var playerThree = { name: "Neeraj Chopra" };
+      var playerFour = playerThree;
+      var playerSet = new Set();
+      playerSet.add(playerOne);
+      playerSet.add(playerTwo);
+      playerSet.add(playerThree);
+      playerSet.add(playerFour);
+    </script>
+  </head>
+  <body></body>
+</html>

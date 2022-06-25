@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+      font-family: sans-serif;
+  }
+  .header {
+    height: auto;
+    width: 100%;
+    background-color: rgb(209, 209, 209);
+  }
+  .logo__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 140px;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .nav__container {
+    display: flex;
+    flex-basis: 250px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav__item {
+    color: rgb(40, 101, 192);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .nav__item--hover:hover{
+      border-bottom: 3px solid orange;
+      transition: linear;
+  }
+  .card {
+    border: 1px solid black;
+    flex-basis: 200px;
+    height: 200px;
+    /* width: 200px; */
+    box-shadow: 5px 5px 10px gray;
+  }
+  .main__container {
+    margin: 20px 60px;
+  }
+  .card__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  img {
+    height: 150px;
+    width: 100%;
+  }
+  .card {
+    padding: 10px;
+    margin:10px;
+
+  }
+  .bird-name__container {
+
+    display: flex;
+    align-items: center;
+    padding:5px 0;
+    gap: 10px;
+    /* justify-content: space-around; */
+  }
+  .bird-name {
+    font-size: 16px;
+  }
+  .tags__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tags {
+    background-color: gray;
+    padding: 2px 6px;
+    border-radius: 50px;
+  }

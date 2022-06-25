@@ -1,0 +1,13 @@
+{
+    "name": "UsingSASS",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "compilesass":"sass ./sass/styles.scss ./css/styles.css -w"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+  

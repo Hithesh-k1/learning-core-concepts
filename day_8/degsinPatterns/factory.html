@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Fulltime() {
+        this.salary = 100000;
+      }
+
+      function Contractor() {
+        this.salary = 80000;
+      }
+      function Parttime() {
+        this.dailyWages = 10000;
+      }
+      function Freelancer() {
+        this.hourlyWages = 5000;
+      }
+
+      function EmployeeFactory() {
+        let emp;
+        this.createEmployee = function (type) {
+          if (type === "fulltime") {
+            emp = new Fulltime();
+          } else if (type === "parttime") {
+            emp = new Parttime();
+          } else if (type === "contractor") {
+            emp = new Contractor();
+          } else if (type === "freelancer") {
+            emp = new Freelancer();
+          }
+          emp.type = type;
+          return emp;
+        };
+      }
+      var empFactory = new EmployeeFactory();
+      let fulltimeEmp = empFactory.createEmployee("fulltime");
+      let freelancer = empFactory.createEmployee("freelancer");
+    </script>
+  </head>
+  <body></body>
+</html>

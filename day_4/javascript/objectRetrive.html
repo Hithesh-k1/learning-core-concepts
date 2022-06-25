@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var player = {
+        name: "Djokovic",
+        sport: "Tennis",
+        isWorldNo1: true,
+        noOfTitlesWon: 20,
+        address: {
+          country: "Serbia",
+        },
+        grandslamsWon: ["US Open", "Aus Open"],
+      };
+
+    //   for (var key in player) {
+      //     console.log("Key : " + key + " , Value : " + player[key]); // associative array syntax
+      //   }
+
+      //   var book = { title: "Wings Of Fire", author: "Dr. APJ Abdul Kalam" };
+      var book = {};
+      //   Object.defineProperty(book, "title", {
+      //     value: "Wings Of Fire",
+      //     writable: true,
+      //     enumerable: true,
+      //   });
+
+      Object.defineProperties(book, {
+        title: {
+          value: "India 2020",
+          writable: true,
+        },
+        author: {
+          value: "Dr. APJ Abdul Kalam",
+          enumerable: true,
+        },
+      });
+      for (var key in book) {
+        console.log(key);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

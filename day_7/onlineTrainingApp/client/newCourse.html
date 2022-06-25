@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <script>
+      function GetFormData() {
+        let id = document.querySelector("#txtCourseId").value;
+        let title = document.querySelector("#txtCourseName").value;
+        let price = document.querySelector("#txtCoursePrice").value;
+        let likes = document.querySelector("#txtCourseLikes").value;
+        let rating = document.querySelector("#txtCourseRating").value;
+        let imageUrl = document.querySelector("#txtCourseImage").value;
+
+        return {
+          id,
+          title,
+          price,
+          likes,
+          rating,
+          imageUrl,
+        };
+
+        // var city = "Mumbai",
+        //   state = "MH";
+
+        // var obj = { city: city, state: state };
+        // var obj = { city, state };
+      }
+
+      function AddNewCourse(e) {
+        e.preventDefault();
+        let newCourse = GetFormData();
+        // add a new course to server
+        fetch("http://localhost:5000/newcourse", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newCourse),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data);
+            if (data.msg === "success") {
+              window.href.location = "/";
+            }
+          });
+      }
+    </script>
+  </head>
+  <body class="container">
+    <header>
+      <h1>New Course</h1>
+    </header>
+    <main class="row">
+      <form class="col-md-4" id="newcourseform" onsubmit="AddNewCourse(event)">
+        <label for="txtCourseId">Id : </label
+        ><input
+          type="text"
+          class="form-control"
+          placeholder="CourseId required.."
+          required
+          id="txtCourseId"
+        />
+
+        <label for="txtCourseName">Name : </label
+        ><input
+          type="text"
+          required
+          placeholder="CourseName required.."
+          class="form-control"
+          id="txtCourseName"
+        />
+
+        <label for="txtCoursePrice">Price : </label
+        ><input type="number" class="form-control" id="txtCoursePrice" />
+
+        <label for="txtCourseRating">Rating : </label
+        ><input type="number" class="form-control" id="txtCourseRating" />
+
+        <label for="txtCourseLikes">Likes : </label
+        ><input type="number" class="form-control" id="txtCourseLikes" />
+
+        <label for="txtCourseImage">Image URL : </label
+        ><input type="text" class="form-control" id="txtCourseImage" />
+
+        <input
+          type="submit"
+          id="btnAddNewCourse"
+          class="btn btn-success my-2"
+          value="Add New Course"
+        />
+      </form>
+    </main>
+  </body>
+</html>

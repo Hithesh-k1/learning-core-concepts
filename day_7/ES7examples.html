@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Exponential Operator (ES7)
+      console.log(3 ** 3);
+
+      // Array.includes() (ES7)
+      let numArray = [100, 200, 300, 400];
+      console.log(numArray.includes(300));
+
+      var obj = { name: "XYZ" };
+      var arr = [10, 20, 30, 40, obj, 50];
+      console.log(arr.includes(obj));
+
+      // reduce
+
+      var salary = {
+        basic: 100000,
+        ta: 20000,
+        da: 10000,
+        hra: 30000,
+      };
+
+      console.log(
+        Object.values(salary).reduce((totalSal, val) => {
+          console.log(totalSal);
+          return totalSal + val;
+        })
+      );
+    </script>
+  </head>
+  <body>
+    <p>Para 1</p>
+    <p>Para 2</p>
+    <p>Para 3</p>
+
+    <script>
+      var allPs = document.querySelectorAll("p");
+      let allParas = Array.from(allPs);
+
+      function Add() {
+        let inputNums = Array.from(arguments);
+        return inputNums.reduce((total, val) => total + val);
+      }
+      console.log(Add(10, 20, 30, 40, 50));
+    </script>
+  </body>
+</html>

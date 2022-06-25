@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.js"></script>
+    <script src="GetData.js"></script>
+    <script>
+      let thePromise = GetPostsData();
+      thePromise
+        .then(function (response) {
+          let allPosts = response.data;
+          let postList = document.querySelector("#postList");
+          for (let post of allPosts) {
+            let newLi = document.createElement("li");
+            newLi.innerText = post.title;
+            newLi.className = "list-group-item";
+            postList.appendChild(newLi);
+          }
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    </script>
+  </head>
+  <body class="container">
+    <header>
+      <h1>All Posts</h1>
+    </header>
+    <main>
+      <ul id="postList" class="list-group"></ul>
+    </main>
+  </body>
+</html>

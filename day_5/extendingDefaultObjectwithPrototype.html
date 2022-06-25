@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      Date.prototype.getDayName = function () {
+        var stringdays = {
+          0: "Sunday",
+          1: "Monday",
+          2: "Tuesday",
+          3: "Wednesday",
+          4: "Thursday",
+          5: "Friday",
+          6: "Saturday",
+          7: "Sunday",
+        };
+        return stringdays[this.getDay()];
+        // switch (this.getDay()) {
+        //   case 0:
+        //     return "Sunday";
+        //   case 1:
+        //     return "Monday";
+        //   case 2:
+        //     return "Tuesday";
+        //   case 3:
+        //     return "Wednesday";
+        //   case 4:
+        //     return "Thursday";
+        //   case 5:
+        //     return "Friday";
+        //   case 6:
+        //     return "Saturday";
+        //   default:
+        //     return "Which planet ?";
+        // }
+      };
+      var date = new Date();
+      console.log(date.getDayName());
+    </script>
+  </head>
+  <body></body>
+</html>

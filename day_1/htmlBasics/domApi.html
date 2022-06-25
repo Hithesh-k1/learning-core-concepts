@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- running script here will give output 'null' bcs script is executed before parsing whole html body -->
+  </head>
+  <body>
+    <div id="target">Target Div !</div>
+    <div class="styled">Div 2</div>
+    <div class="styled">Div 3</div>
+    <script>
+      var targetDiv = document.getElementById("target");// selects elements by id
+      var allDivs = document.getElementsByTagName("div"); //selects elements by tag name
+      var allStyledDivs = document.getElementsByClassName("styled"); // selects element by classname
+      var targetDiv = document.querySelector("[id='target']"); // selects any elements returns single elements
+      var allClassStyled = document.querySelectorAll(".styled"); // selects any elements returns collection of elements
+    </script>
+  </body>
+</html>

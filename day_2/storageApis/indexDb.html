@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="txtMovieId">Id : </label>
+      <input type="text" id="txtMovieId" /> <br />
+      <label for="txtMovieName">Name : </label>
+      <input type="text" id="txtMovieName" /> <br />
+      <label for="txtMovieBudget">Budget : </label>
+      <input type="text" id="txtMovieBudget" /><br />
+      <input type="button" value="Store" id="btnStore" />
+      <input type="button" value="Retrieve" onclick="getMovie()" />
+    </form>
+
+    <script>
+      window.indexedDB =
+        window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB;
+      var db, moviesOS;
+
+      if (!window.indexedDB) {
+        alert("Your browser does not support indexed DB ");
+      } else {
+        // connection
+        // DB creation
+        // insert values
+        // get the values
+
+        var connection = window.indexedDB.open("moviesDB", 1);
+        connection.onsuccess = function (e) {
+          console.log("Connection opened successfully !");
+        };
+
+        connection.onerror = function (e) {
+          console.log("Error opening connection");
+        };
+
+        connection.onupgradeneeded = function (e) {
+          db = e.target.result;
+          moviesOS = db.createObjectStore("movies"); // collection
+          moviesOS.createIndex("id", "id", { unique: true });
+          document
+            .querySelector("#btnStore")
+            .addEventListener("click", addMovieToStore);
+        };
+      }
+
+      function addMovieToStore() {
+        //add objec to object store
+        var movieId = document.querySelector("#txtMovieId").value;
+        var movieName = document.querySelector("#txtMovieName").value;
+        var movieBudget = document.querySelector("#txtMovieBudget").value;
+
+        var transaction = db.transaction(["movies"], "readwrite");
+        var store = transaction.objectStore("movies");
+
+        var newMovie = {
+          id: movieId,
+          name: movieName,
+          budget: movieBudget,
+        };
+
+        store.add(newMovie, movieId); // insert
+      }
+
+      function getMovie() {
+        var transaction = db.transaction(["movies"], "readwrite");
+        var store = transaction.objectStore("movies");
+        var movieId = document.querySelector("#txtMovieId").value;
+        var req = store.get(movieId);
+        req.onsuccess = function (e) {
+          console.log(e.target.result);
+        };
+      }
+    </script>
+  </body>
+</html>

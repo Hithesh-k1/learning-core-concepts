@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   var person = { name: "Federer", country: "Switzerland" };
+      //   var player = Object.create(person);
+      //   console.log(player.name);
+
+      //   var o = Object.create(null);
+      //   o.name = "ABC";
+
+      function Car(name, speed) {
+        this.name = name || "BMW";
+        this.speed = speed || 300;
+        this.accelerate = function () {
+          console.log(
+            "The car " + this.name + " is running at " + this.speed + " kmph !"
+          );
+        };
+      }
+
+      function JamesBondCar() {
+        this.canFly = true;
+        this.hasAmmunitions = true;
+      }
+
+      JamesBondCar.prototype = new Car();
+      JamesBondCar.prototype.accelerate=function () {
+          console.log(
+            "The car " + this.name + " is running at " + this.speed + " kmph ! can fly "+this.canFly
+          );
+      var jbc = new JamesBondCar(); // new instance doesnot have prototype
+    </script>
+  </head>
+  <body></body>
+</html>

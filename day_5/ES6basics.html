@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   let x = 100;
+      //   var y = 200;
+
+      //   if (true) {
+      //     let x;
+      //     x = 100;
+      //     if (true) {
+      //       console.log(x);
+      //     }
+      //   }
+
+      //   const PI;
+      //   PI = 3.14; // error
+
+      const PI = 3.14;
+      //   PI = 3.1455555; //error
+      const company = { name: "Microsoft", location: "Redmond" };
+      company.name = "Microsoft INC";
+      company.isMNC = true;
+      //   company = {}; // error
+
+      // Spread Operator
+      // with arrays
+      //   var cars = ["BMW", "Audi", "Ferrari"];
+      //   var moreCars = [...cars, "Hyundai"];
+      //   cars[0] = "TATA";
+
+      //   var cars = [
+      //     { name: "BMW", make: 2000 },
+      //     { name: "Audi", make: 2002 },
+      //   ];
+      //   var moreCars = [...cars];
+      //   cars[0].name = "Ferrari";
+
+      // with Objects
+      var person = {
+        name: "Deepika Kumari",
+        country: "INDIA",
+      };
+      var player = { ...person, sport: "Archery" };
+
+      // Destructuring
+      // with arrays
+      var cars = ["BMW", "Audi", "Ferrari"];
+      //var firstCar, secondCar;
+      //   firstCar = cars[0];
+      //   secondCar = cars[1];
+
+      // OR
+      var [firstCar, secondCar, thirdCar = "TATA"] = cars;
+
+      // with Objects
+      var person = {
+        name: "Deepika Kumari",
+        country: "INDIA",
+      };
+      //var name, country;
+      //   name = person.name;
+      //   country = person.country;
+      // OR
+      var { country: CNTY, name } = person;
+
+      //   var player = {
+      //     name: "Neeraj Chopra",
+      //     country: "INDIA",
+      //     sport: "Javelin",
+      //     isGoldMedalist: true,
+      //     hasEndorsments: true,
+      //     famousAdv: "CRED",
+      //   };
+      //   function PrintPlayer({ name, country, sport }) {
+      //     console.log(name + " represents " + country + " for " + sport);
+      //   }
+
+      //   PrintPlayer(player);
+
+      // nesting
+      var player = {
+        name: "Neeraj Chopra",
+        country: "INDIA",
+        sport: "Javelin",
+        details: {
+          isGoldMedalist: true,
+          hasEndorsements: true,
+          famousAdv: "CRED",
+        },
+      };
+      var {
+        details: { famousAdv },
+      } = player;
+
+      // functions
+      // default parameters
+      //   function PrintBook(
+      //     author = "Unknown",
+      //     title = "Unknown",
+      //     publisher = "Unknown"
+      //   ) {
+      //     // author = author || "Unknown";
+      //     // title = title || "Unknown";
+      //     // publisher = publisher || "Unknown";
+
+      //     console.log(author, title, publisher);
+      //   }
+      //   PrintBook();
+      //   PrintBook("Sachin Tendulkar", "Playing It My Way", "Jayco");
+      //   PrintBook(undefined, "XYZ", "PQR");
+
+      // rest parameters
+      function PrintBook(author, ...titles) {
+        console.log(titles);
+        console.log(author);
+      }
+      PrintBook("Dr. APJ Abdul Kalam", "India 2020", "Wings Of Fire");
+      PrintBook("Shivaji Sawant", "Mrutyunjay", "Yugandhar", "Panipat");
+
+      // arrow functions
+      //   var Add = function (x, y) {
+      //     return x + y;
+      //   };
+      // OR
+
+      var Add = (x, y) => {
+        return x + y;
+      };
+
+      // OR
+      var Add = (x, y) => x + y;
+      var Square = (x) => x * x;
+      var Test = () => console.log("hi");
+    </script>
+  </head>
+  <body></body>
+</html>

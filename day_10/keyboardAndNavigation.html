@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header><h1>New Input Types : HTML5</h1></header>
+    <main>
+      <form>
+        <!-- <div>This is a non focusable element !</div> -->
+        <div
+          tabindex="0"
+          style="
+            background-color: lightskyblue;
+            padding: 5px;
+            border: 1px solid red;
+            border-radius: 3px;
+            width: 100px;
+            cursor: pointer;
+          "
+        >
+          Click Me !
+        </div>
+        <br />
+        <div contenteditable="true">This is a editable content !</div>
+        <br />
+        <label for="txtName">Name : </label
+        ><input
+          type="text"
+          id="txtName"
+          required
+          placeholder="Username goes here.."
+          autofocus
+        />
+        <br />
+        <label for="txtPassword">Password : </label
+        ><input
+          type="password"
+          id="txtPassword"
+          minlength="6"
+          placeholder="min length 6 chars"
+        />
+        <br />
+        <label for="txtAge">Age : </label
+        ><input type="number" min="18" max="80" id="txtAge" />
+
+        <br />
+        <label for="txtEmail">Email : </label
+        ><input type="email" id="txtEmail" />
+
+        <br />
+        <label for="txtDoB">DoB : </label><input type="date" id="txtDoB" />
+
+        <br />
+        <label for="txtDoBPattern">DoB (Pattern) : </label
+        ><input
+          type="text"
+          id="txtDoBPattern"
+          placeholder="dd/MM/yyyy"
+          pattern="\d\d/\d\d/\d\d\d\d"
+        />
+        <br />
+        Gender : <input type="radio" name="gender" id="rdbMale" />
+        <label for="rdbMale"> Male</label>
+        <input type="radio" name="gender" id="rdbFemale" />
+        <label for="rdbFemale"> Female</label>
+
+        <br />
+        <label for="txtColor">Fav Color : </label
+        ><input
+          type="color"
+          id="txtColor"
+          onchange="txtName.style.backgroundColor=this.value"
+        />
+
+        <br />
+        <label for="txtSalary">Salary : </label
+        ><input
+          type="range"
+          id="txtSalary"
+          min="10000"
+          max="100000"
+          value="50000"
+          onchange="txtRangeSalary.value = this.value"
+          step="5000"
+        />
+        <output id="txtRangeSalary"> </output>
+
+        <br />
+        <label for="txtEmailList">Alternate Email : </label>
+        <input type="text" id="txtEmailList" list="emaillist" />
+
+        <datalist id="emaillist">
+          <option value="sumeet@gmail.com">Gmail</option>
+          <option value="sumeet@hotmail.com">Hotmail</option>
+          <option value="sumeet@msn.com">msn</option>
+        </datalist>
+        <br />
+        Completed (%) <progress value="30" max="100"></progress>
+        <br />
+        Pollution Level: <meter value="90" low="30" high="80" max="100"></meter>
+        <br />
+
+        <fieldset>
+          <legend>Billing Information</legend>
+          <label for="txtHouseNo">House No.</label
+          ><input type="text" id="txtHouseNo" /> <br />
+          <label for="txtStreetNo">Street No.</label
+          ><input type="text" id="txtStreetNo" /> <br /><label for="txtPinNo"
+            >Pin No.</label
+          ><input type="text" id="txtPinNo" /> <br />
+        </fieldset>
+    
+
+        <br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
+</html>

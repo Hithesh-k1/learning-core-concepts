@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function AddToStorage() {
+        if (window.localStorage) {
+          var city = document.querySelector("#txtCityName").value;
+          var state = document.querySelector("#txtStateName").value;
+          //   localStorage[city] = state;
+          //   localStorage.setItem(city);
+
+          //   sessionStorage[city] = state;
+
+          var cityDetails = { name: city, state: state, pin: 440011 };
+          localStorage[city] = JSON.stringify(cityDetails);
+        }
+      }
+
+      function RetriveStorage() {
+        var city = document.querySelector("#txtCityName").value;
+
+        //   localStorage[city]
+        console.log(localStorage.getItem(city));
+        // console.log(sessionStorage.getItem(city));
+      }
+    </script>
+  </head>
+  <body>
+    <label for="txtCityName">City: </label
+    ><input type="text" id="txtCityName" /> <br />
+    <label for="txtStateName">State: </label
+    ><input type="text" id="txtStateName" />
+    <br />
+
+    <button onclick="AddToStorage()">Add</button>
+    <button onclick="RetriveStorage()">Retrieve</button>
+  </body>
+</html>

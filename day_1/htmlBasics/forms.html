@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function SubmitTheForm() {
+        var userForm = document.getElementById("userForm");
+        userForm.submit();
+      }
+      function SubmitHandler(e) {
+        // validations / biz logic
+        e.preventDefault(); // prventing the browser from doing the default action
+        // AJAX request !
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <form novalidate id="userForm" action="handler.php" method="post"> // NO validation applied on input fields -->
+    <form id="userForm" action="handler.php" method="post" onsubmit="SubmitHandler(e)">
+      <label for="txtName">Name : </label>
+      <input
+        type="text"
+        id="txtName"
+        required
+        placeholder="Username goes here.."
+        name='username'
+      />
+      <br />
+      <label for="txtEmail">Email : </label>
+      <input type="email" id="txtEmail" name='email' />
+      <br />
+      <!-- <input type="button" value="Submit(type Button)" /> not validate nd submit-->
+      <input type="submit" value="Submit (type Submit)" /> 
+     <!-- validate input fields if 'required' and submit form -->
+      <button type="button" onclick="SubmitTheForm()">Submit</button>
+      <!-- by default type in form is submit -->
+    </form>
+  </body>
+</html>

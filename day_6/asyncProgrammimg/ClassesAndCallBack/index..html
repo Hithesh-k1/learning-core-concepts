@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="GetData.js"></script>
+    <script>
+      class Posts {
+        allPosts = [];
+        getAllPosts() {
+          let thePromise = GetPostsData();
+          thePromise.then((responseJSON) => {
+            this.allPosts = responseJSON;
+            console.log(this.allPosts);
+          });
+        }
+      }
+      var postsObj = new Posts();
+      postsObj.getAllPosts();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var cars = ["BMW", "AUDI", "FERRARI"];
+      //   for (const index in cars) {
+      //     console.log(cars[index]);
+      //   }
+
+      //   for (let car of cars) {
+      //     console.log(car);
+      //   }
+
+      //   var iterator = cars[Symbol.iterator]();
+      //   // 1000 lines of code
+      //   console.log(iterator.next());
+      //   // 50 lines of code
+      //   console.log(iterator.next());
+      //   console.log(iterator.next());
+      //   console.log(iterator.next());
+
+      var company = {
+        name: "Microsoft",
+        location: "Redmond",
+        isMNC: true,
+        [Symbol.iterator]() {
+          let values = Object.values(this);
+          let index = 0;
+          return {
+            next() {
+              if (index < values.length) {
+                let value = values[index];
+                index++;
+                return {
+                  value: value,
+                  done: false,
+                };
+              } else {
+                return {
+                  value: undefined,
+                  done: true,
+                };
+              }
+            },
+          };
+        },
+      };
+      for (const key of company) {
+        console.log(key);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

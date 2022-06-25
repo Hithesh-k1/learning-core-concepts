@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #target {
+        border: 1px solid gray;
+        border-radius: 5px;
+        height: 200px;
+        width: 200px;
+        margin: 40px;
+        padding: 10px;
+        background-color: orange;
+        /* transform: rotate(-30deg); */
+        /* transform: scale(0.5); */
+        transition: width 1s ease-in-out 0.5s, height 2s;
+        /* transition-property: width;
+        transition-delay: 2s;
+        transition-duration: 2s; */
+      }
+      #target:hover {
+        /* transform: scale(1.25); */
+        /* transform: rotateX(45deg); */
+        /* transform: translate(100px, 100px); */
+        width: 500px;
+        height: 400px;
+      }
+      #block{
+        width: 200px;
+        height: 400px;
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="target">Target Div !</div>
+    <div id="block">block Div !</div>
+
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+    //   var Module = (function () {
+    //     var PI = 3.14;
+
+    //     function Add(x, y) {
+    //       return x + y;
+    //     }
+
+    //     function Product(x, y) {
+    //       return x * y;
+    //     }
+    //     return {
+    //       Add: Add,
+    //       pi:PI
+    //     };
+    //   })();
+      //Module.add()
+
+      
+      //   var MathModule = { PI: 3.14 };
+//Augmented pattern
+      var MathModule = (function (MathModule) {
+        MathModule.Add = function (x, y) {
+          return x + y;
+        };
+
+        function Product(x, y) {
+          return x * y;
+        }
+        return MathModule;
+      })(MathModule || {});
+    </script>
+  </head>
+  <body></body>
+</html>

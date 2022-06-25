@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function* SimpleGenerator() {
+        yield 10;
+        console.log("After");
+        var returnedValuefromNext = yield 20;
+        console.log(returnedValuefromNext);
+        return 30;
+      }
+
+      //   var itr = SimpleGenerator();
+      //   console.log(itr.next());
+      //   console.log(itr.next());
+      //   console.log(itr.next(50));
+      //   console.log(itr.next());
+      //   console.log(itr.next());
+      //   console.log(itr.next());
+
+      function* empIdGenerator() {
+        let id = 1;
+        while (id < 10) {
+          yield "EMP_ID_" + id;
+          id++;
+        }
+      }
+
+      var empGen = empIdGenerator();
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next().value);
+      console.log(empGen.next());
+    </script>
+  </head>
+  <body></body>
+</html> -->
+<html>
+<head>
+  <script src="database-read.js"></script>
+</head>
+
+<body>
+    <h1>
+      the value for number is:
+      <script type="text/javascript">
+        document.write(db)
+      </script>
+    </h1>
+</body>
+</html>

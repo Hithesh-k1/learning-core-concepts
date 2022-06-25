@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+      }
+      /* Use classes */
+      header {
+        background-color: orange;
+        text-align: center;
+        color: white;
+        padding: 10px;
+      }
+      .row {
+        display: flex;
+        height: 80%;
+      }
+      .col-1 ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      .col-1 li {
+        background-color: lightblue;
+        padding: 10px;
+        border-bottom: 2px solid white;
+      }
+
+      .col-2 {
+        text-align: center;
+        background-color: lightcoral;
+        width: 100%;
+      }
+      footer {
+        background-color: lightgray;
+        text-align: center;
+        padding: 10px;
+      }
+
+      @media screen and (max-width: 480px) {
+        header,
+        footer {
+          height: 5%;
+          padding: 5px;
+        }
+        .row {
+          flex-wrap: wrap;
+        }
+        [class*="col"] {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>News Center</h1>
+    </header>
+    <main class="row">
+      <nav class="col-1">
+        <ul>
+          <li>World News</li>
+          <li>Sports News</li>
+          <li>Bollywood News</li>
+        </ul>
+      </nav>
+      <section class="col-2">
+        <article>
+          <h2>Ashes DAY II</h2>
+          <p>Will this be England's ashes this time ?</p>
+        </article>
+        <article>
+          <h2>Ind vs NZ Test ODI !</h2>
+          <p>Will NZ bounce back in the ODI !</p>
+        </article>
+        <article>
+          <h2>Ind vs NZ Test ODI !</h2>
+          <p>Will NZ bounce back in the ODI !</p>
+        </article>
+      </section>
+    </main>
+    <footer>@Copyright 2021</footer>
+  </body>
+</html>

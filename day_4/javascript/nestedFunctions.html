@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   function Outer() {
+      //     var msg = "Within inner function !";
+      //     function Inner() {
+      //       console.log(msg);
+      //     }
+      //     Inner();
+      //   }
+
+      //   Outer();
+
+      function Outer() {
+        var msg = "Within inner function !";
+        return function () {
+          console.log(msg);
+        };
+      }
+      var Inner = Outer();
+      Inner();
+
+      function Counter() {
+        var count = 0;
+        return function () {
+          console.log(count++);
+        };
+      }
+
+      var myCounter = Counter();
+      myCounter();
+      myCounter();
+      myCounter();
+      myCounter();
+      myCounter();
+      myCounter();
+
+      function Add(x) {
+        return function (y) {
+          return x + y;
+        };
+      }
+
+      var Add10to = Add(10);
+
+      // Function Currying
+      console.log(Add(20)(30));
+
+      // IIFE - Immediately invocable function expression
+      // gets executed only once !
+      // encapsulation !
+      //implement module pattern
+      (function () {
+        console.log("IIFE executed !");
+      })();
+
+      (function (x, y) {
+        console.log(x + y);
+      })(10, 30);
+
+      var result = (function (x, y) {
+        return x + y;
+      })(20, 30);
+    </script>
+  </head>
+  <body></body>
+</html>

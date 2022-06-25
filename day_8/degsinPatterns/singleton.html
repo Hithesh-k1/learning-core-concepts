@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //var o = { name: "XYZ" };
+      //   var p = { name: "PQR" };
+      // var p = o;
+
+      //   function CreateObject() {
+      //     return {
+      //       name: "ABC",
+      //     };
+      //   }
+      //   var a = CreateObject();
+      //   var b = CreateObject();
+      //   a.name = "PQR";
+
+      var singleton = (function () {
+        let instance = null;
+        function createInstance() {
+          return {
+            title: "React",
+            rating: 5,
+          };
+        }
+        return {
+          getInstance: function () {
+            if (!instance) {
+              instance = createInstance();
+            }
+            return instance;
+          },
+        };
+      })();
+      var courseObj = singleton.getInstance();
+      var anotherCourseObj = singleton.getInstance();
+      courseObj.title = "Angular";
+    </script>
+  </head>
+  <body></body>
+</html>

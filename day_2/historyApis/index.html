@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 250px;
+        height: 150px;
+        margin: 30px;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      img:hover {
+        cursor: pointer;
+      }
+      #techDetails {
+        margin: 30px;
+        border: 1px solid black;
+        height: 150px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>SPA with history API !</h1>
+    </header>
+    <main>
+      <section>
+        <img
+          src="https://ms314006.github.io/static/b7a8f321b0bbc07ca9b9d22a7a505ed5/97b31/React.jpg"
+          alt="React"
+        />
+        <img
+          src="https://trio.dev/static/d358b933553e621c0c5797f49252c8b2/7fad34d867a32f732b37534ff013e916.jpg"
+          alt="Angular"
+        />
+        <img
+          src="https://miro.medium.com/max/1400/1*vj-6rx5pN8aoQcbs_z0CKw.jpeg"
+          alt="Vue"
+        />
+      </section>
+      <section id="techDetails">
+        Click the image to see the details here..
+      </section>
+
+      <script>
+        // server
+        var techs = [
+          {
+            id: 1,
+            name: "react",
+            description:
+              "React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.",
+          },
+          {
+            id: 2,
+            name: "angular",
+            description:
+              "Angular is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS",
+          },
+          {
+            id: 3,
+            name: "vue",
+            description:
+              "Vue.js is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You, and is maintained by him and the rest of the active core team members",
+          },
+        ];
+
+        var allImages = document.querySelectorAll("img");
+        for (let index = 0; index < allImages.length; index++) {
+          allImages[index].addEventListener("click", function () {
+            manageState(techs[index]);
+          });
+        }
+        function manageState(theTech) {
+          window.history.pushState(theTech, theTech.name, theTech.name);
+          SetDetails(theTech);
+        }
+
+        function SetDetails(theTech) {
+          var techDetails = document.querySelector("#techDetails");
+          techDetails.innerHTML = theTech.description;
+          window.addEventListener("popstate", function (e) {
+          SetDetails(e.state);
+        });
+        }
+      </script>
+    </main>
+  </body>
+</html>
